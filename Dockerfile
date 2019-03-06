@@ -1,4 +1,4 @@
-FROM pataquets/ubuntu:xenial
+FROM pataquets/ubuntu:bionic
 
 RUN \
   apt-get update && \
@@ -10,3 +10,4 @@ RUN \
   rm -rf /var/lib/apt/lists/
 
 ENTRYPOINT [ "memcachedb" ]
+CMD [ "-u", "root", "-H", "/var/lib/memcachedb", "-v" ]
